@@ -1,0 +1,15 @@
+"Window": {
+	backgroundColor: "#fff"
+},
+"WebView[platform=ios]": {
+	bottom: 44
+},
+"#toolbarBorder[platform=ios]": {
+	height:"1px",
+	bottom:44,
+	backgroundColor: "#4c000000" // ARGB
+},
+"Toolbar[platform=ios]": {
+	bottom: 0,
+	borderTop: true
+}
