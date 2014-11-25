@@ -1,4 +1,4 @@
 # TiBrowser Widget [![Appcelerator Titanium](http://www-static.appcelerator.com/badges/titanium-git-badge-sq.png)](http://appcelerator.com/titanium/) [![Appcelerator Alloy](http://www-static.appcelerator.com/badges/alloy-git-badge-sq.png)](http://appcelerator.com/alloy/)
 This is a widget for the [Alloy](http://projects.appcelerator.com/alloy/docs/Alloy-bootstrap/index.html) MVC framework of [Appcelerator](http://www.appcelerator.com)'s [Titanium](http://www.appcelerator.com/platform) platform.
 
-It provides an in-app browser, with back, forward, and refresh buttons, and options to open the current url in the default browser or copy it into the clipboard.
+It provides an in-app browser, with back, forward, and refresh buttons, and options to open the current page in the default browser, or copy the current url into the clipboard.
