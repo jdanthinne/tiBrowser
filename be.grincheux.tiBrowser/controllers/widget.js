@@ -15,6 +15,7 @@ if (OS_ANDROID) {
 if (typeof args.url != "undefined" && args.url != "") setUrl(args.url);
 if (typeof args.color != "undefined" && args.color != "") setColor(args.color);
 if (typeof args.tintColor != "undefined" && args.tintColor != "") setTintColor(args.tintColor);
+if (typeof args.autoOpen != "undefined" && args.autoOpen) open();
 
 // History & Navigation handler
 function pageLoaded() {
