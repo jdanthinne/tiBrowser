@@ -55,6 +55,7 @@ Sets the main color of the browser (background color of the title bar, tint colo
 Sets the secondary color of the browser (tint color of the toolbar).
 
 ## Changelog
+* 1.3: Fixed images path
 * 1.2: Added *autoOpen* argument
 * 1.1: Added public methods
 * 1.0: Inital commit
