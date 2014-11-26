@@ -3,6 +3,10 @@ This is a widget for the [Alloy](http://projects.appcelerator.com/alloy/docs/All
 
 It provides an in-app browser, with back, forward, and refresh buttons, and options to open the current page in the default browser, or copy the current url into the clipboard.
 
+## Get it [![gitTio](http://gitt.io/badge.png)](http://gitt.io/component/be.grincheux.tiBrowser)
+Download this repository and consult the [Alloy Documentation](http://docs.appcelerator.com/titanium/latest/#!/guide/Alloy_XML_Markup-section-35621528_AlloyXMLMarkup-ImportingWidgets) on how to install it, or simply use the [gitTio CLI](http://gitt.io/cli):
+`$ gittio install be.grincheux.tiBrowser`
+
 ## Usage
 #### In a view
 ```xml
