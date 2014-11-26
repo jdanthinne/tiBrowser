@@ -12,4 +12,22 @@
 "Toolbar[platform=ios]": {
 	bottom: 0,
 	borderTop: true
+},
+"#prevPage[platform=ios]": {
+	image: WPATH("images/765-arrow-left-toolbar.png")
+},
+"#prevPage[platform=android]": {
+	image: WPATH("images/ic_arrow_back_black_36dp.png")
+},
+"#nextPage[platform=ios]": {
+	image: WPATH("images/766-arrow-right-toolbar.png")
+},
+"#nextPage[platform=android]": {
+	image: WPATH("images/ic_arrow_forward_black_36dp.png")
+},
+"#refreshPage[platform=ios]": {
+	image: WPATH("images/713-refresh-1-toolbar.png")
+},
+"#refreshPage[platform=android]": {
+	image: WPATH("images/ic_refresh_black_36dp.png")
 }

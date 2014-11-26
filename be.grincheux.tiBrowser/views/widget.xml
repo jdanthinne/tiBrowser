@@ -8,11 +8,11 @@
 			<View id="toolbarBorder"/>
 			<Toolbar id="toolbar">
 				<Items>
-					<Button id="prevPage" image="images/765-arrow-left-toolbar.png" onClick="prevPage" enabled="false" />
+					<Button id="prevPage" onClick="prevPage" enabled="false" />
 					<FlexSpace/>
-					<Button id="nextPage" image="images/766-arrow-right-toolbar.png" onClick="nextPage" enabled="false" />
+					<Button id="nextPage" onClick="nextPage" enabled="false" />
 					<FlexSpace/>
-					<Button id="refreshPage" image="images/713-refresh-1-toolbar.png" onClick="refreshPage" enabled="false" />
+					<Button id="refreshPage" onClick="refreshPage" enabled="false" />
 					<FlexSpace/>
 					<Button systemButton="ACTION" onClick="showDialog" />
 				</Items>
@@ -30,9 +30,9 @@
 	<Window id="win" title="Loading…" platform="android" onOpen="initWin">
 		<ActionBar displayHomeAsUp="true" onHomeIconItemSelected="closeWin" />
 		<Menu id="androidMenu">
-			<MenuItem title="Back" itemId="1" icon="images/ic_arrow_back_black_36dp.png" onClick="prevPage" enabled="false" showAsAction="Ti.Android.SHOW_AS_ACTION_IF_ROOM" />
-			<MenuItem title="Forward" itemId="2" icon="images/ic_arrow_forward_black_36dp.png" onClick="nextPage" enabled="false" showAsAction="Ti.Android.SHOW_AS_ACTION_IF_ROOM" />
-			<MenuItem title="Refresh" itemId="3" icon="images/ic_refresh_black_36dp.png" onClick="refreshPage" enabled="false" showAsAction="Ti.Android.SHOW_AS_ACTION_IF_ROOM" />
+			<MenuItem id="prevPage" title="Back" itemId="1" onClick="prevPage" enabled="false" showAsAction="Ti.Android.SHOW_AS_ACTION_IF_ROOM" />
+			<MenuItem id="nextPage" title="Forward" itemId="2" onClick="nextPage" enabled="false" showAsAction="Ti.Android.SHOW_AS_ACTION_IF_ROOM" />
+			<MenuItem id="refreshPage" title="Refresh" itemId="3" onClick="refreshPage" enabled="false" showAsAction="Ti.Android.SHOW_AS_ACTION_IF_ROOM" />
 			<MenuItem title="Open in Browser" onClick="openBrowser" showAsAction="Ti.Android.SHOW_AS_ACTION_NEVER" />
 			<MenuItem title="Copy link" onClick="copyLink" showAsAction="Ti.Android.SHOW_AS_ACTION_NEVER" />
 		</Menu>
