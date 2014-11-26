@@ -36,22 +36,22 @@ browser.setTintColor("#fff");
 browser.open();
 ```
 ## Arguments
-### url (*string*)
+#### url (*string*)
 The url to be loaded in the browser.
-### color (*string*)
+#### color (*string*)
 The main color of the browser (background color of the title bar, tint color of the toolbar).
-### tintColor (*string*)
+#### tintColor (*string*)
 The secondary color of the browser (tint color of the toolbar).
-### autoOpen (*bool*)
+#### autoOpen (*bool*)
 If set to *true*, the window will open on widget creation. Otherwise, you have to use the *open()* methods.
 ## Available methods
-### open()
+#### open()
 Opens the browser window.
-### setUrl (*string* url)
+#### setUrl (*string* url)
 Sets the url for the loaded in the webview.
-### setColor (*string* color)
+#### setColor (*string* color)
 Sets the main color of the browser (background color of the title bar, tint color of the toolbar).
-### setTintColor (*string* color)
+#### setTintColor (*string* color)
 Sets the secondary color of the browser (tint color of the toolbar).
 
 ## Changelog
