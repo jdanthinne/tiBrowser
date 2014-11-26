@@ -19,8 +19,9 @@ $.browser.open();
 Alloy.createWidget("be.grincheux.tiBrowser", {
   url: "http://google.com",
   color: Alloy.Globals.primary,
-  tintColor: "#fff"
-}).open();
+  tintColor: "#fff",
+  autoOpen: true
+});
 ```
 Or you can set options after creating the widget if needed.
 ```javascript
