@@ -11,29 +11,12 @@ if (OS_ANDROID) {
 	var refreshMenu;
 }
 
+// Apply arguments
 if (typeof args.url != "undefined" && args.url != "") setUrl(args.url);
-if (OS_IOS) {
-	if (typeof args.color != "undefined" && args.color != "") {
-		$.navWin.applyProperties({
-			backgroundColor: args.color,
-			barColor: args.color
-		});
-		$.toolbar.tintColor = args.color;
-		$.win.barColor = args.color;
-	}
-	if (typeof args.tintColor != "undefined" && args.tintColor != "") {
-		$.navWin.tintColor = args.tintColor;
-	}
-}
+if (typeof args.color != "undefined" && args.color != "") setColor(args.color);
+if (typeof args.tintColor != "undefined" && args.tintColor != "") setTintColor(args.tintColor);
 
-if (OS_IOS) $.navWin.open({modal: true});
-if (OS_ANDROID) $.win.open({modal: true});
-
-function setUrl(url) {
-	$.webView.url = url;
-}
-exports.setUrl = setUrl;
-
+// History & Navigation handler
 function pageLoaded() {
 	if (typeof loadedTimeout == "number") clearTimeout(loadedTimeout);
 	loadedTimeout = setTimeout(doLoaded, 500); // Set a timeout so redirects are not taken into account.
@@ -54,6 +37,7 @@ function doLoaded() {
 	browsing_direction = "";
 }
 
+// Navigation
 function prevPage() {
 	browsing_direction = "prev";
 	setRefresh(false);
@@ -62,6 +46,7 @@ function prevPage() {
 	checkPrevPage();
 	$.webView.url = history[history_position];
 }
+
 function nextPage() {
 	browsing_direction = "prev";
 	setRefresh(false);
@@ -70,30 +55,11 @@ function nextPage() {
 	checkNextPage();
 	$.webView.url = history[history_position];
 }
+
 function refreshPage() {
 	browsing_direction = "refresh";
 	setRefresh(false);
 	$.webView.reload();
-}
-
-function showDialog() {
-	$.dialog.show();
-}
-function actions(e) {
-	switch(e.index) {
-		case 0:
-			openBrowser();
-			break;
-		case 1:
-			copyLink();
-			break;
-	}
-}
-function openBrowser() {
-	Ti.Platform.openURL($.webView.url);
-}
-function copyLink() {
-	Ti.UI.Clipboard.setText($.webView.url);
 }
 
 function checkPrevPage() {
@@ -140,7 +106,56 @@ function setRefresh(enabled) {
 	}
 }
 
-function openWin() {
+// Actions
+function showDialog() {
+	$.dialog.show();
+}
+function actions(e) {
+	switch(e.index) {
+		case 0:
+			openBrowser();
+			break;
+		case 1:
+			copyLink();
+			break;
+	}
+}
+function openBrowser() {
+	Ti.Platform.openURL($.webView.url);
+}
+function copyLink() {
+	Ti.UI.Clipboard.setText($.webView.url);
+}
+
+// Public methods
+function setUrl(url) {
+	$.webView.url = url;
+}
+exports.setUrl = setUrl;
+
+function setColor(color) {
+	$.navWin.applyProperties({
+		backgroundColor: color,
+		barColor: color
+	});
+	$.toolbar.tintColor = color;
+	$.win.barColor = color;
+}
+exports.setColor = setColor;
+
+function setTintColor(color) {
+	$.navWin.tintColor = color;
+}
+exports.setTintColor = setTintColor;
+
+function open() {
+	if (OS_IOS) $.navWin.open({modal: true});
+	if (OS_ANDROID) $.win.open({modal: true});
+}
+exports.open = open;
+
+// Init & Close handlers
+function initWin() {
 	$.win.activity.invalidateOptionsMenu();
 	$.win.activity.onPrepareOptionsMenu = function(e) {
 		menu = e.menu;
@@ -154,5 +169,6 @@ function closeWin() {
 	if (OS_IOS) $.navWin.close();
 	if (OS_ANDROID) $.win.close();
 }
+
 if (OS_IOS) $.navWin.addEventListener("close", function() { $.destroy();});
 if (OS_ANDROID) $.win.addEventListener("close", function() { $.destroy();});
