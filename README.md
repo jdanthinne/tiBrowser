@@ -10,7 +10,7 @@ It provides an in-app browser, with back, forward, and refresh buttons, and opti
   <Widget id="browser" src="be.grincheux.tiBrowser" url="http://www.google.com" color="#f00" tintColor="#fff" autoOpen="true" />
 </Alloy>
 ```
-If *autoOpen* is omitted or *false*, don't forget to add the following code in your controller:
+If *autoOpen* is omitted or *false*, don't forget to add the following code to your controller:
 ```javascript
 $.browser.open();
 ```
