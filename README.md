@@ -31,6 +31,15 @@ browser.setColor("#f00");
 browser.setTintColor("#fff");
 browser.open();
 ```
+## Arguments
+### url (*string*)
+The url to be loaded in the browser.
+### color (*string*)
+The main color of the browser (background color of the title bar, tint color of the toolbar).
+### tintColor (*string*)
+The secondary color of the browser (tint color of the toolbar).
+### autoOpen (*bool*)
+If set to *true*, the window will open on widget creation. Otherwise, you have to use the *open()* methods.
 ## Available methods
 ### open()
 Opens the browser window.
