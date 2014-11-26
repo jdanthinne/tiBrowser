@@ -27,7 +27,7 @@
 		</Window>
 	</NavigationWindow>
 	
-	<Window id="win" title="Loading…" platform="android" onOpen="openWin">
+	<Window id="win" title="Loading…" platform="android" onOpen="initWin">
 		<ActionBar displayHomeAsUp="true" onHomeIconItemSelected="closeWin" />
 		<Menu id="androidMenu">
 			<MenuItem title="Back" itemId="1" icon="images/ic_arrow_back_black_36dp.png" onClick="prevPage" enabled="false" showAsAction="Ti.Android.SHOW_AS_ACTION_IF_ROOM" />
