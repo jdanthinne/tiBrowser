@@ -14,6 +14,7 @@ if (OS_ANDROID) {
 // Apply arguments
 if (typeof args.url != "undefined" && args.url != "") setUrl(args.url);
 if (typeof args.color != "undefined" && args.color != "") setColor(args.color);
+if (typeof args.titleColor != "undefined" && args.titleColor != "") setTitleColor(args.titleColor);
 if (typeof args.tintColor != "undefined" && args.tintColor != "") setTintColor(args.tintColor);
 if (typeof args.autoOpen != "undefined" && args.autoOpen) open();
 
@@ -145,6 +146,11 @@ function setColor(color) {
 	$.win.barColor = color;
 }
 exports.setColor = setColor;
+
+function setTitleColor(color) {
+	if (OS_IOS) $.win.setTitleAttributes({color: color});
+}
+exports.setTitleColor = setTitleColor;
 
 function setTintColor(color) {
 	if (OS_IOS) $.navWin.tintColor = color;
