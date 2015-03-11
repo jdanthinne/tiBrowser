@@ -135,17 +135,19 @@ function setUrl(url) {
 exports.setUrl = setUrl;
 
 function setColor(color) {
-	$.navWin.applyProperties({
-		backgroundColor: color,
-		barColor: color
-	});
-	$.toolbar.tintColor = color;
+	if (OS_IOS) {
+		$.navWin.applyProperties({
+			backgroundColor: color,
+			barColor: color
+		});
+		$.toolbar.tintColor = color;
+	}
 	$.win.barColor = color;
 }
 exports.setColor = setColor;
 
 function setTintColor(color) {
-	$.navWin.tintColor = color;
+	if (OS_IOS) $.navWin.tintColor = color;
 }
 exports.setTintColor = setTintColor;
 
