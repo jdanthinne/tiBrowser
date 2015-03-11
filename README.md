@@ -52,12 +52,15 @@ If set to *true*, the window will open on widget creation. Otherwise, you have t
 Opens the browser window.
 #### setUrl (*string* url)
 Sets the url for the loaded in the webview.
-#### setColor (*string* color)
+#### setColor (*string* color) - iOS
 Sets the main color of the browser (background color of the title bar, tint color of the toolbar).
-#### setTintColor (*string* color)
+#### setTitleColor (*string* color) - iOS
+Sets the color of the title bar.
+#### setTintColor (*string* color) - iOS
 Sets the secondary color of the browser (tint color of the toolbar).
 
 ## Changelog
+* 1.3.2: Added *setTitleColor* method
 * 1.3.1: Fixed iOS/Android differences
 * 1.3: Fixed images path
 * 1.2: Added *autoOpen* argument
