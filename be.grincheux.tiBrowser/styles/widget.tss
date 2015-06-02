@@ -1,5 +1,21 @@
+"NavigationWindow[platform=ios]": {
+	orientationModes: [
+        Ti.UI.LANDSCAPE_LEFT,
+        Ti.UI.LANDSCAPE_RIGHT,
+        Ti.UI.PORTRAIT,
+        Ti.UI.UPSIDE_PORTRAIT
+    ]
+},
 "Window": {
 	backgroundColor: "#fff"
+},
+"Window[platform=android]": {
+	orientationModes: [
+        Ti.UI.LANDSCAPE_LEFT,
+        Ti.UI.LANDSCAPE_RIGHT,
+        Ti.UI.PORTRAIT,
+        Ti.UI.UPSIDE_PORTRAIT
+    ]
 },
 "WebView[platform=ios]": {
 	bottom: 44

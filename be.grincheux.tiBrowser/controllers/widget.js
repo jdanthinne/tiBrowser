@@ -163,7 +163,7 @@ function open() {
 }
 exports.open = open;
 
-// Init & Close handlers
+// Events
 function initWin() {
 	$.win.activity.invalidateOptionsMenu();
 	$.win.activity.onPrepareOptionsMenu = function(e) {
@@ -179,5 +179,13 @@ function closeWin() {
 	if (OS_ANDROID) $.win.close();
 }
 
-if (OS_IOS) $.navWin.addEventListener("close", function() { $.destroy();});
+if (OS_IOS) {
+	$.navWin.addEventListener("close", function() { $.destroy();});
+	Ti.Gesture.addEventListener("orientationchange", function() {
+		// Trick to handle images distortion on rotation
+		$.prevPage.image = $.prevPage.image;
+		$.nextPage.image = $.nextPage.image;
+		$.refreshPage.image = $.refreshPage.image;
+	});
+}
 if (OS_ANDROID) $.win.addEventListener("close", function() { $.destroy();});
