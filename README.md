@@ -60,6 +60,7 @@ Sets the color of the title bar.
 Sets the secondary color of the browser (tint color of the toolbar).
 
 ## Changelog
+* 1.3.4: Fix iOS icons when launching in landscape orientation
 * 1.3.3: Handle orientation changes
 * 1.3.2: Added *setTitleColor* method
 * 1.3.1: Fixed iOS/Android differences

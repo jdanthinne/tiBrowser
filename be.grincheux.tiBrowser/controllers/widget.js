@@ -24,6 +24,7 @@ function pageLoaded() {
 	loadedTimeout = setTimeout(doLoaded, 500); // Set a timeout so redirects are not taken into account.
 }
 function doLoaded() {
+	$.showActions.enabled = true;
 	if (browsing_direction == ""
 	&& $.webView.url != history[history_position]
 	&& $.webView.evalJS("document.querySelector('body').innerHTML").length) { // Update history only if a link has been clicked, not on back, previous or refresh action.
@@ -181,11 +182,10 @@ function closeWin() {
 
 if (OS_IOS) {
 	$.navWin.addEventListener("close", function() { $.destroy();});
-	Ti.Gesture.addEventListener("orientationchange", function() {
-		// Trick to handle images distortion on rotation
-		$.prevPage.image = $.prevPage.image;
-		$.nextPage.image = $.nextPage.image;
-		$.refreshPage.image = $.refreshPage.image;
+	$.navWin.addEventListener("open", function() { 
+		$.prevPage.image = WPATH("images/765-arrow-left-toolbar.png");
+		$.nextPage.image = WPATH("images/766-arrow-right-toolbar.png");
+		$.refreshPage.image = WPATH("images/713-refresh-1-toolbar.png");
 	});
 }
 if (OS_ANDROID) $.win.addEventListener("close", function() { $.destroy();});

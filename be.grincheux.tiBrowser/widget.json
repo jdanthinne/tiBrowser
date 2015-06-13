@@ -3,7 +3,7 @@
 	"name": "be.grincheux.tiBrowser",
 	"description" : "In-app browser, an enhanced webview.",
 	"author": "Jérôme Danthinne",
-	"version": "1.3.3",
+	"version": "1.3.4",
 	"copyright":"Copyright (c) 2015",
 	"license":"MIT License",
 	"min-alloy-version": "1.4",

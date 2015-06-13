@@ -8,13 +8,13 @@
 			<View id="toolbarBorder"/>
 			<Toolbar id="toolbar">
 				<Items>
-					<Button id="prevPage" onClick="prevPage" enabled="false" />
+					<Button id="prevPage" onClick="prevPage" enabled="false"></Button>
 					<FlexSpace/>
-					<Button id="nextPage" onClick="nextPage" enabled="false" />
+					<Button id="nextPage" onClick="nextPage" enabled="false"></Button>
 					<FlexSpace/>
-					<Button id="refreshPage" onClick="refreshPage" enabled="false" />
+					<Button id="refreshPage" onClick="refreshPage" enabled="false"></Button>
 					<FlexSpace/>
-					<Button systemButton="ACTION" onClick="showDialog" />
+					<Button id="showActions" systemButton="ACTION" onClick="showDialog" enabled="false"></Button>
 				</Items>
 			</Toolbar>
 			<OptionDialog id="dialog" cancel="2" onClick="actions">
