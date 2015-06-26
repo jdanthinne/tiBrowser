@@ -42,9 +42,11 @@ browser.open();
 #### url (*string*)
 The url to be loaded in the browser.
 #### color (*string*)
-The main color of the browser (background color of the title bar, tint color of the toolbar).
+The main color of the browser (background color of the title bar).
 #### tintColor (*string*)
-The secondary color of the browser (tint color of the toolbar).
+The tint color of the title bar.
+#### toolbarTintColor (*string*)
+The tint color of the toolbar.
 #### autoOpen (*bool*)
 If set to *true*, the window will open on widget creation. Otherwise, you have to use the *open()* methods.
 ## Available methods
@@ -53,13 +55,16 @@ Opens the browser window.
 #### setUrl (*string* url)
 Sets the url for the loaded in the webview.
 #### setColor (*string* color) - iOS
-Sets the main color of the browser (background color of the title bar, tint color of the toolbar).
+Sets the main color of the browser (background color of the title bar).
 #### setTitleColor (*string* color) - iOS
 Sets the color of the title bar.
 #### setTintColor (*string* color) - iOS
-Sets the secondary color of the browser (tint color of the toolbar).
+Sets the tint color of the title bar.
+#### setToolbarTintColor (*string* color) - iOS
+Sets the tint color of the toolbar.
 
 ## Changelog
+* 1.3.5: Added *setToolbarTintColor* method
 * 1.3.4: Fix iOS icons when launching in landscape orientation
 * 1.3.3: Handle orientation changes
 * 1.3.2: Added *setTitleColor* method

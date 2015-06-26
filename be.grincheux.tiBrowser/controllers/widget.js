@@ -15,7 +15,11 @@ if (OS_ANDROID) {
 if (typeof args.url != "undefined" && args.url != "") setUrl(args.url);
 if (typeof args.color != "undefined" && args.color != "") setColor(args.color);
 if (typeof args.titleColor != "undefined" && args.titleColor != "") setTitleColor(args.titleColor);
-if (typeof args.tintColor != "undefined" && args.tintColor != "") setTintColor(args.tintColor);
+if (typeof args.tintColor != "undefined" && args.tintColor != "") {
+	setTintColor(args.tintColor);
+	if (typeof args.toolbarTintColor == "undefined") setToolbarTintColor(args.tintColor);
+}
+if (typeof args.toolbarTintColor != "undefined" && args.toolbarTintColor != "") setToolbarTintColor(args.toolbarTintColor);
 if (typeof args.autoOpen != "undefined" && args.autoOpen) open();
 
 // History & Navigation handler
@@ -142,7 +146,6 @@ function setColor(color) {
 			backgroundColor: color,
 			barColor: color
 		});
-		$.toolbar.tintColor = color;
 	}
 	$.win.barColor = color;
 }
@@ -157,6 +160,11 @@ function setTintColor(color) {
 	if (OS_IOS) $.navWin.tintColor = color;
 }
 exports.setTintColor = setTintColor;
+
+function setToolbarTintColor(color) {
+	if (OS_IOS) $.toolbar.tintColor = color;
+}
+exports.setToolbarTintColor = setToolbarTintColor;
 
 function open() {
 	if (OS_IOS) $.navWin.open({modal: true});
