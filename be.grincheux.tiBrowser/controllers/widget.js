@@ -28,7 +28,9 @@ function pageLoaded() {
 	loadedTimeout = setTimeout(doLoaded, 500); // Set a timeout so redirects are not taken into account.
 }
 function doLoaded() {
-	$.showActions.enabled = true;
+	if(OS_IOS) {
+		$.showActions.enabled = true;
+	}
 	if (browsing_direction == ""
 	&& $.webView.url != history[history_position]
 	&& $.webView.evalJS("document.querySelector('body').innerHTML").length) { // Update history only if a link has been clicked, not on back, previous or refresh action.
