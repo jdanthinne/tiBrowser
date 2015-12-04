@@ -44,6 +44,11 @@ function doLoaded() {
 	checkNextPage();
 	setRefresh(true);
 	browsing_direction = "";
+
+	// Function that is going to receive the parameters on the html file
+	if (typeof args.data != "undefined" && args.data) {
+		$.webView.evalJS("if (typeof loadExternalData === 'function') { loadExternalData('" + JSON.stringify(args.data) + "'); }");
+	}
 }
 
 // Navigation
@@ -192,7 +197,7 @@ function closeWin() {
 
 if (OS_IOS) {
 	$.navWin.addEventListener("close", function() { $.destroy();});
-	$.navWin.addEventListener("open", function() { 
+	$.navWin.addEventListener("open", function() {
 		$.prevPage.image = WPATH("images/765-arrow-left-toolbar.png");
 		$.nextPage.image = WPATH("images/766-arrow-right-toolbar.png");
 		$.refreshPage.image = WPATH("images/713-refresh-1-toolbar.png");

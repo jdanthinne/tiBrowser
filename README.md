@@ -41,6 +41,22 @@ browser.open();
 ## Arguments
 #### url (*string*)
 The url to be loaded in the browser.
+#### data (*object*)
+The data object with its properties to be read on your local HTML file.
+Your HTML must have a JavaScript function called `loadExternalData` which receives the data object as parameter.
+```
+<html>
+<head>
+    <script type="text/javascript">
+        function loadExternalData(data) {
+            // At this point, data is a String. We need to parse to convert to an Object
+            var obj = JSON.parse(data);
+            alert(obj.key + ' - ' + obj.whatever);
+        }
+    </script>
+</head>
+</html>
+```
 #### color (*string*)
 The main color of the browser (background color of the title bar).
 #### tintColor (*string*)
