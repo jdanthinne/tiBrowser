@@ -80,6 +80,7 @@ Sets the tint color of the title bar.
 Sets the tint color of the toolbar.
 
 ## Changelog
+* 1.3.6: Add functionality to send parameter to a local HTML file
 * 1.3.5: Added *setToolbarTintColor* method
 * 1.3.4: Fix iOS icons when launching in landscape orientation
 * 1.3.3: Handle orientation changes
