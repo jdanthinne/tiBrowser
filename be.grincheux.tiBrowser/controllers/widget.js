@@ -47,7 +47,7 @@ function doLoaded() {
 
 	// Function that is going to receive the parameters on the html file
 	if (typeof args.data != "undefined" && args.data) {
-		$.webView.evalJS("loadExternalData('" + JSON.stringify(args.data) + "');");
+		$.webView.evalJS("if (typeof loadExternalData === 'function') { loadExternalData('" + JSON.stringify(args.data) + "'); }");
 	}
 }
 
